@@ -11,7 +11,7 @@ Aplikasi Desktop CRUD MySQL sederhana menggunakan Electron Forge
 1. Download/Clone source code diatas
 2. Buat Folder Baru dan Masuk ke folder tersebut
 3. Import kedalam Electron Forge (https://www.electronforge.io/import-existing-project)
-4. Alternatif lain bisa hanya menggunakan electron dengan mengcopykan seluruh isi dalam folder src setelah menginstall electron 
+4. Alternatif lain bisa hanya menggunakan electron dengan mengcopykan seluruh isi dalam folder src setelah menginstall electron
 
 # Menjalankan
 
@@ -32,6 +32,6 @@ Aplikasi Desktop CRUD MySQL sederhana menggunakan Electron Forge
 
 # Demo video
 
-1. Youtube ()
+1. Youtube (https://www.youtube.com/watch?v=Rt0Nd8v0c9o&feature=youtu.be)
 
 # STMIK Komputama Majenang
