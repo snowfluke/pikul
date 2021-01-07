@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline-offset: 0px !important;
+    outline: none !important;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+    padding: 30px 0;
+}
+
+.red{
+	color:#e74c3c;
+}
+
+.green{
+	color: #27ae60;
+}
+
+input {
+    font-size: 1em;
+    padding: 0 20px;
+    height: 40px;
+    border: 0;
+    color: #222;
+    border-bottom: 2px solid #bbb;
+}
+
+select {
+    font-size: 1em;
+    padding: 0 20px;
+    height: 40px;
+    border: 0;
+    color: #222;
+    border-bottom: 2px solid #bbb;
+}
+
+
+input:focus {
+    border-bottom: 2px solid #1b1b1b;
+}
+
+input[type=submit] {
+  border-radius: 5px;
+  border: none;
+	background: #1b1b1b;
+	color: #fff;
+	cursor: pointer;
+}
+
+input[type=submit]:hover{
+	cursor: pointer;
+	background: #5e5c5c;
+	box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+body {
+   	background-color: #ffffff;
+  	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23bbbbbb' fill-opacity='0.4' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+	  font-size: 16px;
+    color: #23272B;
+    font-family: 'Roboto', sans-serif;
+}
+
+.loginboard, .mainboard {
+	display: grid;
+	grid-template-columns: 1fr;
+	width: 100%;
+	place-content: center;
+	grid-row-gap: 1em;
+	height: 100%;
+	text-align: center;
+}
+
+#fp label {
+	font-weight: bold;
+}
+
+#fp select, #fp input[type=text], #fp input[type=number]{
+	width: 100%;
+	padding: 0 !important;
+}
+
+#fl {
+	display: grid;
+	justify-items: center;
+	grid-row-gap: 1em;
+}
+
+.jatuhTempo {
+	color:#e74c3c !important;
+	background: #ffd1cd !important;
+}
+
+.telat {
+	background: #e74c3c !important;
+}
+
+.cicil {
+	background: #27ae60 !important;
+}
+
+.label-container {
+	width: 60%;
+	text-align: right;
+}
+
+#fp {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-gap: 1em;
+	grid-template-columns: 1fr 2fr 1fr;
+}
+
+section#login. section#main {
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+tbody tr:nth-child(odd) {
+    background: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background: #f6f6f6;
+}
+
+td{
+	padding: 10px 5px;
+    border: 1px solid #efefef;
+    width: auto;
+}
+
+th{
+    background: #23272b;
+    padding: 10px 5px;
+    color: white;
+    border: 1px solid #ffff;
+}
+
+.imgwrap {
+	text-align: center;
+}
+
+tr td:first-child {
+	text-align: center;
+}
+
+tr td:nth-child(2) {
+	cursor: pointer;
+}
+
+tr td:nth-child(2):hover {
+	background: #23272b;
+	color:#fff;
+}
+
+#mhs tr td:nth-child(2):hover,
+#brg tr td:nth-child(2):hover {
+	background: inherit;
+	color: inherit;
+  cursor: inherit;
+}
+
+.splash {
+	display:grid;
+	justify-items:center;
+	padding-top:10px;
+	position:absolute;
+	top:0;
+	left:0;
+	overflow: hidden;
+	background: #fff;
+	height: 100%;
+	width: 100%;
+}
+
+button {
+  border-radius: 5px;
+  border: none;
+	background: #1b1b1b;
+	color: #fff;
+	cursor: pointer;
+  margin:5px;
+  font-size: 0.8em;
+  padding: 0 10px;
+  height: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+	background: #5e5c5c;
+	box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+details {
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+summary {
+  padding: 5px;
+  font-weight: bold;
+}
+
+ul li {
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+ul {
+  background: #fff;
+  border:1px solid #efefef;
+  margin: 5px;
+  padding: 5px;
+}
+
+kbd {
+    background-color: #eee;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    font-weight: 700;
+    padding: 2px 3px;
+    white-space: nowrap;
+}
+
+iframe {
+  display:none !important;
+}

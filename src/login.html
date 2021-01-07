@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pinjaman Kuliah</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body style="overflow: hidden;">
+  	<section id="login">
+		<div class="container" >
+			<div class="loginboard">
+				<form id="fl">
+					<h2>Pikul <span class="red">Offline</span></h2><br>
+					<input type="text" name="username" placeholder="Username" required>
+					<input type="password" name="password" placeholder="Password" required>
+					<div>
+						<input type="submit" name="submit" value="Login">
+					</div>
+				</form>
+				<br>
+				<p>Made with <span class="red">❤</span> by Awal Ariansyah</p>
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+	let fl = document.getElementById('fl');
+	fl.addEventListener('submit', event =>{
+			event.preventDefault();
+			let username = fl.username.value;
+			let password = fl.password.value;
+			window.login.log(username, password);
+	})
+</script>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pinjaman Kuliah</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+  	<section id="main">
+		<div class="container">
+			<div class="mainboard">
+				<h1>Daftar Pikulan</h1>
+				<br>
+				<form id="fp">
+					<input type="hidden" id="idPinjam">
+					<div class="label-container">
+						<label for="nim">NIM</label>
+					</div>
+					<select id="mahasiswa">
+						<option hidden disabled selected value></option>
+					</select>
+						<input type="submit" onclick="pikul()" value="Pikul">
+					<div class="label-container">
+						<label for="barang">ID Barang</label>
+					</div>
+					<select id="barang">
+						<option hidden disabled selected value></option>
+					</select>
+						<input type="submit" onclick="cicil()" class="cicil" value="Cicil">
+					<div class="label-container">
+						<label for="tagihan">Pikulan</label>
+					</div>
+					<input type="number" class="tgh" placeholder="Rp. ">
+						<input type="submit" onclick="telat()" class="telat" value="Telat">
+
+				</form>
+			</div>
+      <button id="cetak">Cetak</button>
+			<br>
+			<table id="pjm">
+				<tr>
+					<th>ID</th>
+					<th>Nama</th>
+					<th>Barang</th>
+					<th>Pikulan</th>
+				</tr>
+			</table>
+		</div>
+	</section>
+	<script type="text/javascript">
+		let pf = document.getElementById('fp')
+		let mhs = document.querySelectorAll('mopt')
+		let brg = document.querySelectorAll('bopt')
+    let cetak = document.querySelector('#cetak')
+
+		window.pinjam.lihat();
+		window.pinjam.mhs();
+		window.pinjam.brg();
+
+		function set(nim, brg, jml, id){
+			document.querySelector(`option[value='${nim}']`).selected = true;
+			document.querySelector(`option[value='${brg}']`).selected = true;
+			document.querySelector(`#idPinjam`).value = id;
+			document.querySelector(`.tgh`).value = jml;
+		}
+
+    function pikul() {
+      const mhs = parseInt(document.querySelector('#mahasiswa').value)
+      const brg = document.querySelector('#barang').value
+      let hrg = document.querySelector('.tgh').value
+
+      if(hrg != parseInt(hrg) || !mhs || !brg || parseInt(hrg) == 0){
+        alert('Mohon Masukan Data Dengan Benar!')
+      }else{
+        hrg = parseInt(hrg)
+        window.pinjam.pikul(mhs, brg, hrg)
+      }
+    }
+
+    function cicil() {
+      const mhs = parseInt(document.querySelector('#mahasiswa').value)
+      const brg = document.querySelector('#barang').value
+      let hrg = document.querySelector('.tgh').value
+
+      if(hrg != parseInt(hrg) || !mhs || !brg || parseInt(hrg) == 0){
+        alert('Mohon Masukan Data Dengan Benar!')
+      }else{
+        hrg = parseInt(hrg)
+        window.pinjam.cicil(mhs, brg, hrg)
+      }
+    }
+
+    function telat() {
+      const mhs = parseInt(document.querySelector('#mahasiswa').value)
+      window.pinjam.telat(mhs)
+    }
+
+    cetak.addEventListener('click', e => {
+      e.preventDefault()
+      window.pinjam.cetak()
+    })
+	</script>
+  </body>
+</html>

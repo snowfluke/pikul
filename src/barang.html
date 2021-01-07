@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html id='mhsku'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Barang</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+  	<section id="main">
+		<div class="container">
+			<div class="mainboard">
+				<h1>Daftar Barang</h1>
+				<br>
+			</div>
+			<br>
+			<table id="brg">
+				<tr>
+					<th>ID</th>
+					<th>Nama Barang</th>
+					<th>Harga</th>
+					<th>Aksi</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td contenteditable="true" id="namabarang"></td>
+					<td contenteditable="true" id="harga"></td>
+					<td><center><button id="tambahBarang" onclick="tambahB()" class="cicil">Tambah</button></center></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+	<script type="text/javascript">
+
+		window.barang.lihat();
+
+    function tambahB() {
+      let nb = document.querySelector('#namabarang').innerText
+      let h = document.querySelector('#harga').innerText
+      let t = document.querySelector('#totalbarang').value
+
+      if(h != parseInt(h) || !nb) {
+        alert("Mohon masukkan data dengan benar");
+        return;
+      }else{
+        h = parseInt(h)
+        t = parseInt(t)
+        window.barang.tambah(nb, h, t);
+      }
+
+    }
+
+    function hapusB(id){
+      if(confirm('Apakah Anda Yakin?')){
+          window.barang.hapus(id)
+      }else{
+        return;
+      }
+    }
+
+    function ubahB(id, nm, hr) {
+      let idb = document.querySelector(`td[id='${id}']`).innerText
+      let nmb = document.querySelector(`td[id='${nm}']`).innerText
+      let hrb = document.querySelector(`td[id='${hr}']`).innerText
+      let tb = document.querySelector('#totalbarang').value
+
+      if(hrb != parseInt(hrb) || !nmb) {
+        alert("Mohon masukkan data dengan benar");
+        return;
+      }else{
+        hrb = parseInt(hrb)
+        window.barang.ubah(idb, nmb, hrb, tb);
+      }
+
+    }
+
+	</script>
+  </body>
+</html>

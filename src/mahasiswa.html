@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html id='mhsku'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mahasiswa</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+  	<section id="main">
+		<div class="container">
+			<div class="mainboard">
+				<h1>Daftar Mahasiswa</h1>
+				<br>
+			</div>
+			<br>
+			<table id="mhs">
+				<tr>
+					<th>No</th>
+					<th>NIM</th>
+					<th>Nama</th>
+					<th>Aksi</th>
+				</tr>
+				<tr>
+					<td></td>
+					<td contenteditable="true" id="nim"></td>
+					<td contenteditable="true" id="nama"></td>
+					<td><center><button id="tambahMahasiswa" onclick="tambahM()" class="cicil">Tambah</button></center></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+	<script type="text/javascript">
+
+    function tambahM() {
+      let nim = document.querySelector('#nim').innerText
+      let nama = document.querySelector('#nama').innerText
+
+      if(nim != parseInt(nim) || !/^[a-z A-Z]*$/g.test(nama) || /\s/g.test(nim)) {
+        alert("Mohon masukkan data dengan benar");
+        return;
+      }else{
+        nim = parseInt(nim)
+        window.mahasiswa.tambah(nim, nama);
+      }
+
+    }
+
+    function hapusM(nim){
+      if(confirm('Apakah Anda Yakin?')){
+          window.mahasiswa.hapus(nim)
+      }else{
+        return;
+      }
+    }
+
+    function ubahM(nim, nama) {
+      let nimw = document.querySelector(`td[id='${nim}']`).innerText
+      let namaw = document.querySelector(`td[id='${nama}']`).innerText
+
+      if(nimw != parseInt(nimw) || !/^[a-z A-Z]*$/g.test(namaw) || /\s/g.test(nimw)) {
+        alert("Mohon masukkan data dengan benar");
+        return;
+      }else{
+        nim = parseInt(nimw)
+        window.mahasiswa.ubah(nimw, namaw);
+      }
+
+    }
+
+
+		window.mahasiswa.lihat();
+
+	</script>
+  </body>
+</html>
